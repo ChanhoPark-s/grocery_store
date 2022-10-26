@@ -1,4 +1,9 @@
 # grocery_store
 
-처음 맞이하는 jsp Model 1 형태 개인 프로젝트
-식자재 쇼핑몰
+(jsp(Model 1), 개인 프로젝트) 식자재 쇼핑몰
+
+진행기간 : 22.8.16~22.8.26(2주)
+
+기술 스택 : Oracle, Java, Jsp, Tomcat, Html, Css, Javascript, jQuery
+
+시연영상 : https://www.youtube.com/watch?v=0uTWjoxM3kQ&t=14s
