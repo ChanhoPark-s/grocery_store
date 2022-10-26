@@ -1,0 +1,12 @@
+package boardController;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class BoardListController {
+
+	
+	private final String command = "board.bd";
+	
+	private String gotoPage ="boardlist";
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 복사해서 가져온 부분 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="album.AlbumBean"> <!-- 여기에서 namespace 속성으로  들어간 텍스트는 AlbumBean 클래스와 아무상관이 없다. 마음대로 아무거나 써도 됨 Dao에서 namespace 로 들어감.
+mapper 까지는 만들어줘야함-->
+
+	<!--
+	<insert id="InsertAlbum">
+		insert into albums(num,title,singer,price)
+		values(albums_seq.nextval,#{title},#{singer},#{price})
+	</insert>
+	-->
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="member.model.MemberBean" alias="MyMember"/>
+		<typeAlias type="product.model.ProductBean" alias="MyProduct"/>
+	</typeAliases>
+	
+// 여러 xml 을 써야하기 때문에 root-context.xml 에 쓰지말고 이곳에 여러개를 쓴다.
+// 사용해야 할 xml 다 적
+	<mappers>
+		<mapper resource="mybatis/product.xml"/>
+		<mapper resource="mybatis/member.xml"/>
+	</mappers>
+</configuration>
+
+<!-- SqlMapConfig.xml -->

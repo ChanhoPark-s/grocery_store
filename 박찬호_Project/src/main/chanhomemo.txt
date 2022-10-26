@@ -1,0 +1,281 @@
+
+-- 회원 테이블 생성
+drop sequence memberseq ;
+
+create sequence memberseq   
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+drop table members;
+create table members(
+	no number primary key,
+	id varchar2(12) not null,
+	password varchar2(12),
+	name varchar2(30) not null,
+	email varchar2(30),
+	phone varchar2(20),
+	postcode varchar2(20),
+	address varchar2(200),
+	detailaddress varchar2(200),
+	gender varchar2(10),
+	birth varchar2(20),
+	joindate varchar2(20) default sysdate,	
+	point number			
+);
+
+insert into members(no,id,password,name,email,phone,address,gender,birth) 
+values(memberseq.nextval, 'admin', 'admin','관리자','admin@naver.com', '01022533481', '계양구','남','2022-07-30') ;
+
+
+col no for 999
+col id for a12
+col password for a12
+col name for  a12
+col email for a12
+col phone for a12
+col address for a10
+col gender for a10
+col birth for a10
+col joindate for a10
+select * from members ;
+
+
+-- 카테고리 테이블
+drop sequence mycategoryseq ;
+drop table mycategory ;
+
+create sequence mycategoryseq
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+
+create table mycategory(
+	cnum 	number primary key,
+	code1 	varchar2(20) not null,
+	cname 	varchar2(50) not null
+);
+
+insert into mycategory values(mycategoryseq.nextval,'채소','채소');
+insert into mycategory values(mycategoryseq.nextval,'과일','과일 · 견과 · 쌀');
+insert into mycategory values(mycategoryseq.nextval,'수산','수산 · 해산 · 건어물');
+insert into mycategory values(mycategoryseq.nextval,'정육','정육 · 계란');
+insert into mycategory values(mycategoryseq.nextval,'국','국 · 반찬 · 메인요리');
+insert into mycategory values(mycategoryseq.nextval,'샐러드','샐러드 · 간편식');
+insert into mycategory values(mycategoryseq.nextval,'면','면 · 양념 · 오일');
+insert into mycategory values(mycategoryseq.nextval,'생수','생수 · 음료 · 우유 · 커피');
+insert into mycategory values(mycategoryseq.nextval,'간식','간식 · 과자 · 떡');
+====카테고리세분화 2======================
+
+drop sequence mycategoryseq2 ;
+drop table mycategory2 ;
+
+create sequence mycategoryseq2
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+
+create table mycategory2(
+	cnum  number primary key,
+	code1 varchar2(20) not null,
+	code2 varchar2(20) not null,
+	cname  varchar2(50) not null
+);
+insert into mycategory2 values(mycategoryseq2.nextval,'채소','친환경','친환경');
+insert into mycategory2 values(mycategoryseq2.nextval,'채소','고구마','고구마 · 감자 · 당근');
+insert into mycategory2 values(mycategoryseq2.nextval,'채소','시금치','시금치 · 쌈채소 · 나물');
+insert into mycategory2 values(mycategoryseq2.nextval,'채소','브로콜리','브로콜리 · 파프리카 · 양배추');
+insert into mycategory2 values(mycategoryseq2.nextval,'채소','양파','양파 · 대파 · 마늘 · 배추');
+
+insert into mycategory2 values(mycategoryseq2.nextval,'과일','친환경','친환경');
+insert into mycategory2 values(mycategoryseq2.nextval,'과일','제철과일','제철과일');
+insert into mycategory2 values(mycategoryseq2.nextval,'과일','국산과일','국산과일');
+insert into mycategory2 values(mycategoryseq2.nextval,'과일','수입과일','수입과일');
+
+insert into mycategory2 values(mycategoryseq2.nextval,'수산','제철수산','제철수산');
+insert into mycategory2 values(mycategoryseq2.nextval,'수산','생선류','생선류');
+insert into mycategory2 values(mycategoryseq2.nextval,'수산','굴비','굴비 · 반건류');
+
+insert into mycategory2 values(mycategoryseq2.nextval,'정육','국내산','국내산 소고기');
+insert into mycategory2 values(mycategoryseq2.nextval,'국','국','국 · 탕 · 찌개');
+insert into mycategory2 values(mycategoryseq2.nextval,'샐러드','샐러드','샐러드 · 닭가슴살');
+insert into mycategory2 values(mycategoryseq2.nextval,'면','파스타','파스타 · 면류');
+insert into mycategory2 values(mycategoryseq2.nextval,'생수','생수','생수 · 탄산수');
+insert into mycategory2 values(mycategoryseq2.nextval,'간식','과자','과자 · 스낵 · 쿠키');
+======================================
+
+-- 상품 테이블
+drop sequence mycatprod ;
+
+create sequence mycatprod 
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+drop table myproduct;
+create table myproduct(
+	pnum 		int not null primary key,
+	pimage   		varchar2(30),
+	pname 		varchar2(50) not null,
+	pcategory_fk  	varchar2(40) not null, -- 선택한 카테고리
+	pseller 	varchar2(50),
+	pqty   int default 0,
+	price   		int default 0,
+	pspec   		varchar2(20),
+	pcontents varchar2(300),
+	plife  varchar2(50),
+	pinputdate 	date default sysdate 
+);
+
+col pimage for a12
+col pnum for 99999
+col pname for a12
+col pcategory_fk for a12
+col pseller for a12
+col pqty for 9999
+col price for 999999
+col pspec for a12
+col pcontents for a12
+col plife for a12
+col pinputdate for a12
+select * from myproduct ;
+
+
+-- 매출 주문 테이블
+drop sequence myorderseq ;
+
+create sequence myorderseq 
+increment by 1
+start with 1
+minvalue 0
+maxvalue 10000
+nocache;
+
+drop table myorders ;
+create table myorders(
+	onum number, -- 주문번호(orderseq)
+	mid varchar2(100), -- 회원번호
+	pnum number, -- 상품번호
+	address varchar2(200), --주소지
+	qty number, -- 수량
+	amount number, -- 전체가격
+	orderDate date default sysdate
+);
+col onum for 9999;
+col mid for a20;
+col pnum for 99;
+col address for a100;
+col qty for 99;
+col amount for 999999;
+select * from myorders;
+====장바구니 아이디별로 들어가게========
+
+drop table mycartList ;
+create table mycartList(
+	id varchar2(20),
+	cnum varchar2(20) ,
+	cqty number
+);
+col id for a10;
+col cnum for a10;
+col cqty for 999;
+select * from mycartList;
+================================
+drop table board cascade constraints;
+create table board(
+	num number not null primary key,
+	writer varchar2(10) not null,
+	email varchar2(10),
+	subject varchar2(20) not null,
+	passwd varchar2(12) not null,
+	reg_date date not null,
+	readcount int default 0,
+	ref number  default 0 not null,
+	re_step number default 0 not null,
+	re_level number default 0 not null,
+	content varchar2(50) not null,
+	ip varchar2(15)  not null
+);
+
+drop sequence board_seq ;
+
+create sequence board_seq
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+
+
+
+<%
+	request.setCharacterEncoding("UTF-8");
+	
+	ProductDao pdao = ProductDao.getinstance();
+	
+	ArrayList<CategoryBean> cblists = cdao.getAllCategory();
+	ArrayList<ProductBean>plists =  pdao.getAllProduct();
+	
+%>
+<table align="center" width=35%>
+	<tr align="center">
+		<%
+		int j=1;
+		for(CategoryBean cb : cblists){
+		
+		%>
+		<td align="center" colspan="3" height="100px">
+		<h2><%=cb.getCode1() %></h2>
+		</td>
+	</tr>
+	<%
+	%>
+		<tr>
+				<%
+				int i=1; 
+				for(int z=0;z<9;z++){
+					ProductBean pb = plists.get(z);
+				String rContext = request.getContextPath() + "/admin/images/";
+				String fullPath = rContext + pb.getPimage();
+				DecimalFormat df = new DecimalFormat("###,###");
+				if(pb.getPcategory_fk().contains(cb.getCode1())){
+				%>
+			<td style="padding: 20px">
+				
+				<a href="detailProduct.jsp?pnum=<%=pb.getPnum()%>"><img src="<%=fullPath%>" width="360px" height="410px"></a><br>
+				
+				<font size="2px;" color="908f8f">샛별배송</font><br>
+				
+				<font ><%=pb.getPname() %></font><br>
+				
+				<b><%=df.format(pb.getPrice()) %>원</b><br>
+				
+				<font size="2px;" color="908f8f"><%=pb.getPcontents() %></font>
+			</td>
+				<%		
+				if(i%3==0){
+				%>
+		</tr>
+				<%
+				}//if
+				}//안에꺼반복문
+				i++; 
+					}//for
+				}//맨위 제목 for
+		%>
+	<tr height="350px">
+		<td>
+		</td>
+	</tr>
+</table>

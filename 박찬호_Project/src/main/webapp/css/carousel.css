@@ -1,0 +1,31 @@
+body{
+	margin: 0px;
+}
+
+#carousel_section{
+	width: 100%;
+	background-color: gray;
+}
+
+#carousel_section > ul{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+#carousel_section > ul > li{
+	list-style: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+#carousel_section > ul > li >img{
+	list-style: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

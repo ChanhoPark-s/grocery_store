@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- 어노테이션을 활용한 유효성 검사할 때 필요함 -->
+	<mvc:annotation-driven/>
+
+	<!-- ViewResolver 설정, *.ab 요청이 들어오면 앞에 prefix의 값을 붙이고 뒤에 suffix의 값을 붙여서 해당 url로 이동하게 함 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/board" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 컨트롤러를 찾기위해 album 패키지 하위의 모든 파일을 훑어봐라, album.xxx, album.x.y.z 등등 다 포함 -->
+	<context:component-scan base-package="board"></context:component-scan>
+
+<!--context:componet : 주문할때 어떤 회원이 어떤 상품을 주문하는지 알아야해서 다른 패키지도 훑어본다고 써야함 -->
+</beans>
+
+<!-- .ab 요청이 들어올 때 마다 web.xml에서 여기로 옴. -->
