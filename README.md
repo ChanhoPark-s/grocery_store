@@ -12,6 +12,6 @@
 
 
 <p width="300" height="300">
-  ![박찬호_프로젝트_영상_AdobeExpress](https://user-images.githubusercontent.com/106065178/207624193-0d229936-067d-4606-b039-af80d9b34e4b.gif)
+ ![박찬호_프로젝트_영상_AdobeExpress](https://user-images.githubusercontent.com/106065178/207626090-bdbbf6d9-7da2-40de-b5bf-8963e9b96c29.gif)
 </p>
 안녕하세요
