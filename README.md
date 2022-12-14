@@ -33,7 +33,7 @@
 
 ## 4. 시연 영상
  <p align="center"><img src="https://user-images.githubusercontent.com/106065178/207641919-4e8bb2a6-7fb6-44ea-8690-bd1c06a3ae3a.gif" width="600" height="300"></p>
-
+ <br><a href="https://www.youtube.com/watch?v=0uTWjoxM3kQ&t=3s">[&nbsp;Youtube&nbsp;]</a>
 ## 5. 핵심 트러블 슈팅
 ### 5.1. 컨텐츠 필터와 페이징 처리 문제
 - 저는 이 서비스가 페이스북이나 인스타그램 처럼 가볍게, 자주 사용되길 바라는 마음으로 개발했습니다.  
