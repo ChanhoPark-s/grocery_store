@@ -12,5 +12,5 @@
 
 
 
- <img src="![박찬호_프로젝트_영상_AdobeExpress](https://user-images.githubusercontent.com/106065178/207626090-bdbbf6d9-7da2-40de-b5bf-8963e9b96c29.gif)" width="700" height="500">
+ <img src="(https://user-images.githubusercontent.com/106065178/207626090-bdbbf6d9-7da2-40de-b5bf-8963e9b96c29.gif)" width="700" height="500">
 
