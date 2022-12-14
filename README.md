@@ -4,7 +4,7 @@
  
  # :pushpin: grocery_store
 >(jsp(Model 1), 개인 프로젝트) 식자재 쇼핑몰
-><a href="https://www.youtube.com/watch?v=0uTWjoxM3kQ&t=3s">Youtube</a>
+><a href="https://www.youtube.com/watch?v=0uTWjoxM3kQ&t=3s">&nbsp;[Youtube]</a>
 
 </br>
 
