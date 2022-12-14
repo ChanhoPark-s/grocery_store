@@ -1,6 +1,7 @@
 
- <img src="https://user-images.githubusercontent.com/106065178/207626829-75d3eb8b-2fc1-42dc-8315-89a0e81a3060.gif" width="700" height="500">
- 
+ <img src="https://user-images.githubusercontent.com/106065178/207635307-fb2ac6db-e4a0-40f5-ad86-678606da76ef.gif" width="700" height="500">
+
+
  
  # :pushpin: grocery_store
 >(jsp(Model 1), 개인 프로젝트) 식자재 쇼핑몰
